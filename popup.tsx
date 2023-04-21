@@ -2,6 +2,12 @@ import { useState } from "react"
 
 function IndexPopup() {
   const [data, setData] = useState("")
+  const [text, setText] = useState("");
+
+  const onClickPrint = () => {
+    setData("");
+    setText(data);
+  }
 
   return (
     <div
@@ -18,6 +24,8 @@ function IndexPopup() {
         Extension!
       </h2>
       <input onChange={(e) => setData(e.target.value)} value={data} />
+      <button onClick={onClickPrint}>Print</button>
+      <p>text:{text}</p>
       <a href="https://docs.plasmo.com" target="_blank">
         View Docs
       </a>
